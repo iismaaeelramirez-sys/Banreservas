@@ -776,8 +776,10 @@ def ver_credenciales():
                 <tr><th>ID</th><th>Fecha</th><th>IP</th><th>Ubicación</th><th>Usuario</th><th>Contraseña</th></tr>
         """
         
+        # 🔥 CAMBIO REALIZADO: Formato de fecha 'Jul 22, 2026 7:04 PM'
         for r in rows:
-            html += f"<tr><td>{r[0]}</td><td>{r[1]}</td><td>{r[2]}</td><td>{r[5]}</td><td>{r[3]}</td><td><strong>{r[4]}</strong></td></tr>"
+            timestamp = datetime.fromisoformat(r[1]).strftime('%b %d, %Y %I:%M %p')
+            html += f"<tr><td>{r[0]}</td><td>{timestamp}</td><td>{r[2]}</td><td>{r[5]}</td><td>{r[3]}</td><td><strong>{r[4]}</strong></td></tr>"
         
         html += """
             </table>
